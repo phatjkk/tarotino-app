@@ -5,10 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".AdvancedFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
+    <Button
+        android:id="@+id/btn_getCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Card" />
 </FrameLayout>
