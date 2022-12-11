@@ -40,19 +40,10 @@ public class Tarot {
         }
 
     }
-    public JSONObject getRandomCard(){
+    public String getRandomCard(){
         Random rand = new Random();
         String randomOneCardInList = this.allCard.get(rand.nextInt(this.allCard.size()));
-        try {
-            JSONObject cardObject = new JSONObject(randomOneCardInList);
-            return cardObject;
-        }
-        catch (Exception e){
-            return null;
-        }
-
-
-
+        return randomOneCardInList;
     }
 
 }

@@ -3,6 +3,7 @@ package com.example.tarotino_app;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.ContextWrapper;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -32,7 +33,10 @@ public class AdvancedFragment extends Fragment {
             public void onClick(View v)
             {
                 Tarot tarot = new Tarot(getActivity());
-                Log.i("",tarot.getRandomCard().toString());
+                String cardJSONData = tarot.getRandomCard();
+                Intent intent = new Intent(getActivity(), ViewCardActivity.class);
+                intent.putExtra("CardJSON", cardJSONData);
+                startActivity(intent);
             }
         });
         return view;
