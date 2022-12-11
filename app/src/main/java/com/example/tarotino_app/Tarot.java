@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.util.Log;
 
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,7 +14,6 @@ import java.security.AccessControlContext;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
 public class Tarot {
     List<String> allCard = new ArrayList<String>();
     public Tarot(ContextWrapper context){
@@ -39,8 +40,19 @@ public class Tarot {
         }
 
     }
-    public String getRandomCard(){
+    public JSONObject getRandomCard(){
         Random rand = new Random();
-        return this.allCard.get(rand.nextInt(this.allCard.size()));
+        String randomOneCardInList = this.allCard.get(rand.nextInt(this.allCard.size()));
+        try {
+            JSONObject cardObject = new JSONObject(randomOneCardInList);
+            return cardObject;
+        }
+        catch (Exception e){
+            return null;
+        }
+
+
+
     }
+
 }

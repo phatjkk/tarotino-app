@@ -32,7 +32,7 @@ public class AdvancedFragment extends Fragment {
             public void onClick(View v)
             {
                 Tarot tarot = new Tarot(getActivity());
-                Log.i("",tarot.getRandomCard());
+                Log.i("",tarot.getRandomCard().toString());
             }
         });
         return view;
