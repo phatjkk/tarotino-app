@@ -12,8 +12,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,16 +34,25 @@ public class ViewCardActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         String cardJSONDataString = extras.getString("CardJSON");
-        Toolbar toolbar = (Toolbar) findViewById(R.id.topAppBar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
+        ExtendedFloatingActionButton myFab = (ExtendedFloatingActionButton) findViewById(R.id.extended_fab);
+        myFab.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 onBackPressed();
             }
         });
+
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.topAppBar);
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//
+//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onBackPressed();
+//            }
+//        });
+
 
         JSONObject cardJSONDataObj = JSON_Parse(cardJSONDataString);
         try {
@@ -75,6 +88,16 @@ public class ViewCardActivity extends AppCompatActivity {
         Bitmap bitmap = BitmapFactory.decodeStream(istr);
         return bitmap;
     }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        switch (item.getItemId()) {
+//            // Respond to the action bar's Up/Home button
+//            case android.R.id.home:
+//                onBackPressed();
+//                return true;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
     public JSONObject JSON_Parse(String s){
         try {
             JSONObject cardObject = new JSONObject(s);
