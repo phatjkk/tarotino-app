@@ -1,13 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdvancedFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btn_getCard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Get Card" />
-</FrameLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="10dp"
+        app:cardBackgroundColor="@color/card_dark"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="172dp"
+            android:layout_height="203dp"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="40dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/tarot_co_r" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="290dp"
+            android:layout_marginBottom="40dp"
+            android:text="Chọn những khía cạnh bạn quan tâm"
+            android:textSize="18sp"
+            android:textStyle="italic" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="240dp"
+            android:layout_marginBottom="20dp"
+            android:text="Tarot nâng cao"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+        <Button
+            android:id="@+id/btn_getCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:text="Lấy một lá bài"
+            android:layout_marginBottom="20dp"
+            />
+
+        <CheckBox
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginTop="380dp"
+            android:text="Tiền bạc" />
+
+        <CheckBox
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginTop="320dp"
+            android:text="Tình cảm" />
+
+        <CheckBox
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginTop="350dp"
+            android:text="Công việc" />
+
+        <CheckBox
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginTop="410dp"
+            android:text="Sức khoẻ" />
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
