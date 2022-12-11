@@ -42,16 +42,6 @@ public class ViewCardActivity extends AppCompatActivity {
             }
         });
 
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.topAppBar);
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//
-//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                onBackPressed();
-//            }
-//        });
 
 
         JSONObject cardJSONDataObj = JSON_Parse(cardJSONDataString);
@@ -79,7 +69,6 @@ public class ViewCardActivity extends AppCompatActivity {
         catch (IOException e) {
             e.printStackTrace();
         }
-//        mToolbar.setNavigationOnClickListener(view -> onBackPressed());
     }
     private Bitmap getBitmapFromAsset(String strName) throws IOException
     {
@@ -88,16 +77,7 @@ public class ViewCardActivity extends AppCompatActivity {
         Bitmap bitmap = BitmapFactory.decodeStream(istr);
         return bitmap;
     }
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()) {
-//            // Respond to the action bar's Up/Home button
-//            case android.R.id.home:
-//                onBackPressed();
-//                return true;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
+
     public JSONObject JSON_Parse(String s){
         try {
             JSONObject cardObject = new JSONObject(s);
