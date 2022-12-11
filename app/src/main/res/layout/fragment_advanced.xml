@@ -36,21 +36,23 @@
             android:layout_marginTop="290dp"
             android:layout_marginBottom="40dp"
             android:text="Chọn những khía cạnh bạn quan tâm"
-            android:textSize="18sp"
-            android:textStyle="italic" />
+            android:textSize="15sp"
+            android:textStyle="normal" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="240dp"
             android:layout_marginBottom="20dp"
+            android:fontFamily="monospace"
             android:text="Tarot nâng cao"
-            android:textSize="35sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
         <Button
             android:id="@+id/btn_getCard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="monospace"
             android:layout_gravity="center_horizontal|bottom"
             android:text="Lấy một lá bài"
             android:layout_marginBottom="20dp"

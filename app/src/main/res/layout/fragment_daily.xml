@@ -21,7 +21,7 @@
         app:cardUseCompatPadding="true">
 
         <ImageView
-            android:id="@+id/img"
+            android:id="@+id/img_card"
             android:layout_width="238dp"
             android:layout_height="279dp"
             android:layout_gravity="center"
@@ -35,6 +35,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="40dp"
+            android:fontFamily="monospace"
             android:text="Lá bài hôm nay"
             android:textSize="18sp"
             android:textStyle="italic" />
@@ -44,14 +45,16 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="40dp"
             android:layout_marginBottom="20dp"
+            android:fontFamily="monospace"
             android:text="The Emperor"
             android:textSize="27sp"
             android:textStyle="bold" />
         <Button
-            android:id="@+id/filledButton"
+            android:id="@+id/view_card_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|bottom"
+            android:fontFamily="monospace"
             android:text="Xem chi tiết lá bài"
             android:layout_marginBottom="20dp"
             />
