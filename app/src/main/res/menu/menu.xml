@@ -12,6 +12,6 @@
     <item
         android:id="@+id/item_3"
         android:enabled="true"
-        android:icon="@drawable/history"
-        android:title="Lịch sử"/>
+        android:icon="@drawable/meaning"
+        android:title="Ý nghĩa Tarot"/>
 </menu>

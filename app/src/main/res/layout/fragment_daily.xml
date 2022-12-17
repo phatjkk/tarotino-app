@@ -40,14 +40,14 @@
             android:textSize="18sp"
             android:textStyle="italic" />
         <TextView
+            android:id="@+id/card_name_daily"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="40dp"
             android:layout_marginBottom="20dp"
-            android:fontFamily="monospace"
             android:text="The Emperor"
-            android:textSize="27sp"
+            android:textSize="22dp"
             android:textStyle="bold" />
         <Button
             android:id="@+id/view_card_btn"

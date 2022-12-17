@@ -63,6 +63,22 @@ public class ViewCardActivity extends AppCompatActivity {
             String cardTitleSecondary = cardJSONDataObj.getString("title_secondary");
             TextView textViewCardTitleSecondary = (TextView)findViewById(R.id.title_secondary);
             textViewCardTitleSecondary.setText(cardTitleSecondary);
+
+            String cardTitleT = cardJSONDataObj.getString("title_love");
+            TextView textViewCardTitleT = (TextView)findViewById(R.id.title_love);
+            textViewCardTitleT.setText(cardTitleT);
+
+             cardTitleT = cardJSONDataObj.getString("title_work");
+             textViewCardTitleT = (TextView)findViewById(R.id.title_work);
+            textViewCardTitleT.setText(cardTitleT);
+
+             cardTitleT = cardJSONDataObj.getString("title_money");
+             textViewCardTitleT = (TextView)findViewById(R.id.title_money);
+            textViewCardTitleT.setText(cardTitleT);
+
+             cardTitleT = cardJSONDataObj.getString("title_heath");
+             textViewCardTitleT = (TextView)findViewById(R.id.title_heath);
+            textViewCardTitleT.setText(cardTitleT);
         } catch (JSONException e) {
             e.printStackTrace();
         }

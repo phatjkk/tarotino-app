@@ -48,6 +48,10 @@ public class DailyFragment extends Fragment {
 
         JSONObject cardJSONDataObj = JSON_Parse(cardJSONDataString);
         try {
+            String cardName = cardJSONDataObj.getString("name");
+            TextView textViewCardName = (TextView) view.findViewById(R.id.card_name_daily);
+            textViewCardName.setText(cardName);
+
             String cardImageUrl = cardJSONDataObj.getString("image_url").substring(1);
             ImageView i;
             Bitmap bm = getBitmapFromAsset(cardImageUrl);
