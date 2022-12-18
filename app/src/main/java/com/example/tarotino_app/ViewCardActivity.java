@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -53,6 +54,11 @@ public class ViewCardActivity extends AppCompatActivity {
             String cardImageUrl = cardJSONDataObj.getString("image_url").substring(1);
             ImageView i;
             Bitmap bm = getBitmapFromAsset(cardImageUrl);
+            if(cardName.contains("ngược")) {
+                Matrix matrix = new Matrix();
+                matrix.postRotate(180);
+                bm = Bitmap.createBitmap(bm, 0, 0, bm.getWidth(), bm.getHeight(), matrix, true);
+            }
             i = (ImageView)findViewById(R.id.card_img);
             i.setImageBitmap(bm);
 

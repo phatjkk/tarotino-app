@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.BlurMaskFilter;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.os.Bundle;
@@ -64,6 +65,13 @@ public class DailyFragment extends Fragment {
             String cardImageUrl = cardJSONDataObj.getString("image_url").substring(1);
             ImageView i;
             Bitmap bm = getBitmapFromAsset(cardImageUrl);
+
+            if(cardName.contains("ngược")) {
+                Matrix matrix = new Matrix();
+                matrix.postRotate(180);
+                bm = Bitmap.createBitmap(bm, 0, 0, bm.getWidth(), bm.getHeight(), matrix, true);
+            }
+
             i = (ImageView)view.findViewById(R.id.img_card);
             i.setImageBitmap(bm);
         } catch (JSONException e) {
