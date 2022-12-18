@@ -14,6 +14,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.security.AccessControlContext;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
 public class Tarot {
@@ -49,6 +50,16 @@ public class Tarot {
         Random rand = new Random();
         String randomOneCardInList = this.allCard.get(rand.nextInt(this.allCard.size()));
         return randomOneCardInList;
+    }
+    public String getRandomCardDaily(){
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int day = calendar.get(Calendar.DAY_OF_YEAR);
+        Random random = new Random(day+year);// thieu ngay sinh
+        int min = 0;
+        int max = this.allCard.size();
+        int randomNumber = random.nextInt(max - min + 1) + min;
+        return allCard.get(randomNumber);
     }
     public ArrayList<TarotCard> getAllCardsObj(){
         ArrayList<TarotCard> result =  new ArrayList<TarotCard>();;

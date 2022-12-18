@@ -54,7 +54,7 @@ public class DailyFragment extends Fragment {
         Button btnGetCard = (Button) view.findViewById(R.id.view_card_btn);
 
         Tarot tarot = new Tarot(getActivity());
-        String cardJSONDataString = tarot.getRandomCard();
+        String cardJSONDataString = tarot.getRandomCardDaily();
 
         JSONObject cardJSONDataObj = JSON_Parse(cardJSONDataString);
         try {
