@@ -2,8 +2,10 @@ package com.example.tarotino_app;
 
 import android.content.Context;
 import android.content.ContextWrapper;
+import android.graphics.Bitmap;
 import android.util.Log;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -40,10 +42,40 @@ public class Tarot {
         }
 
     }
+    public String getCardByPosition(int position){
+        return allCard.get(position);
+    }
     public String getRandomCard(){
         Random rand = new Random();
         String randomOneCardInList = this.allCard.get(rand.nextInt(this.allCard.size()));
         return randomOneCardInList;
     }
+    public ArrayList<TarotCard> getAllCardsObj(){
+        ArrayList<TarotCard> result =  new ArrayList<TarotCard>();;
+        for (String cardStrData:allCard) {
+            JSONObject cardJSONDataObj = JSON_Parse(cardStrData);
+            try {
+                String cardName = cardJSONDataObj.getString("name");
+                String cardImageUrl = cardJSONDataObj.getString("image_url").substring(1);
+                String detailStr = "Lá bài đứng";
+                if(cardName.contains("ngược")) {
+                    detailStr = "Lá bài ngược";
+                }
+                TarotCard cardObj = new TarotCard(cardName,detailStr,cardImageUrl,cardStrData);
+                result.add(cardObj);
+            }catch (JSONException e){
 
+            }
+        }
+        return result;
+    }
+        public JSONObject JSON_Parse(String s){
+            try {
+                JSONObject cardObject = new JSONObject(s);
+                return cardObject;
+            }
+            catch (Exception e){
+                return null;
+            }
+        }
 }

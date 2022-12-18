@@ -1,5 +1,9 @@
 package com.example.tarotino_app;
 
+import android.graphics.BlurMaskFilter;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,11 +15,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 
 public class HistoryFragment extends Fragment {
-
     public HistoryFragment(){
         // require a empty public constructor
     }
@@ -25,13 +29,12 @@ public class HistoryFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_history, container, false);
 
-        RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.rvCard);
 
-        ArrayList<TarotCard> cards = new ArrayList<TarotCard>();
-        //Tự phát sinh 50 dữ liệu mẫu
-        for (int i = 1; i <= 50; i++) {
-            cards.add(new TarotCard("TarotCard Name"+i , 1995 + (i % 2)));
-        }
+
+        RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.rvCard);
+        Tarot tarot = new Tarot(getActivity());
+        ArrayList<TarotCard> cards = tarot.getAllCardsObj();
+
 
         TarotCardAdapter adapter = new TarotCardAdapter(cards, getContext());
 

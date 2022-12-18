@@ -9,6 +9,7 @@
     >
 
     <ImageView
+        android:id="@+id/img_card_item"
         android:layout_width="60dp"
         android:layout_height="match_parent"
         android:src="@android:drawable/ic_menu_gallery" />
